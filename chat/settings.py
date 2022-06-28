@@ -69,9 +69,7 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'TEST.wsgi.application'
-
+WSGI_APPLICATION = 'django-chat.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
