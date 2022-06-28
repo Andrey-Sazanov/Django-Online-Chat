@@ -76,16 +76,23 @@ WSGI_APPLICATION = 'chat.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASSES = {
-    'default' : {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME':'d4m3iraqv2mktq',
-        'USER':'oydxubnpiywovz',
-        'PASSWORD':'0de392e298e89b4b75f7ce3a1b5751e6f9cb2d611dd3ddb89c12463951b7d23d',
-        'HOST':'ec2-52-30-159-47.eu-west-1.compute.amazonaws.com',
-        'PORT':'5432',
-    }
-}
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+     }
+ }
+
+# DATABASSES = {
+#     'default' : {
+#         'ENGINE':'django.db.backends.postgresql_psycopg2',
+#         'NAME':'d4m3iraqv2mktq',
+#         'USER':'oydxubnpiywovz',
+#         'PASSWORD':'0de392e298e89b4b75f7ce3a1b5751e6f9cb2d611dd3ddb89c12463951b7d23d',
+#         'HOST':'ec2-52-30-159-47.eu-west-1.compute.amazonaws.com',
+#         'PORT':'5432',
+#     }
+# }
 
 
 # Password validation
@@ -123,8 +130,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'static'),
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 django_heroku.settings(locals())
 
 # Default primary key field type
