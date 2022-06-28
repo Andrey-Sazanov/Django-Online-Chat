@@ -1,3 +1,3 @@
 release:python manage.py migrate
-web: gunicorn app:app
+web: gunicorn django-chat.wsgi.application --log-file=-
 
